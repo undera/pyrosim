@@ -156,7 +156,7 @@ void JOINT::Draw(){
     dVector3 jointAxis;
     dMatrix3 rotation;
     dReal jointActuation;
-    dReal radius = .025;
+    dReal radius = .005;
     dReal length = .3;
     if( type==HINGE){
         if (! (lowStop == highStop && positionControl==true)){
