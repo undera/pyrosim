@@ -1100,7 +1100,7 @@ class Simulator(object):
         return sensor_id
 
     def send_rotation_sensor(self, body_id=0):
-        """Attaches a position sensor to a body in simulation
+        """Attaches a rotation sensor to a body in simulation
 
         Rotation sensor gives 3-axis rotation values
 

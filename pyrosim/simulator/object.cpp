@@ -284,7 +284,7 @@ void OBJECT::Write_To_Python(int evalPeriod) {
 		positionSensor->Write_To_Python(evalPeriod);
     }
 	if ( rotationSensor ){
-        std::cerr << "  writing position sensor to python "  << std::endl;
+        std::cerr << "  writing rotation sensor to python "  << std::endl;
 		rotationSensor->Write_To_Python(evalPeriod);
     }
 	if ( touchSensor ){
