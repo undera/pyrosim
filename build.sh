@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -xe
 
 MAKEOPTS="-j2"
 
@@ -8,6 +8,10 @@ MAKEOPTS="-j2"
 
 echo "Changing into simulator directory"
 cd ./pyrosim/simulator
+
+echo -n "Unpacking ode-0.12.tar.bz2..." &&
+tar -xjf ode-0.12.tar.bz2 &&
+echo "done" &&
 
 mkdir -p ./tmp
 
