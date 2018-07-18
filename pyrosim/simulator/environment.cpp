@@ -234,12 +234,24 @@ void ENVIRONMENT::Update_Forces(int timeStep){
 void ENVIRONMENT::Write_Sensor_Data(int evalPeriod) {
 
     std::cerr << "finishing" << std::endl;
+	std::cout << "Writing final sensor data\n";
 	for (int i=0;i<numberOfBodies;i++)
 		objects[i]->Write_To_Python(evalPeriod);
     for (int j=0;j<numberOfJoints;j++)
     	joints[j]->Write_To_Python(evalPeriod);
 
 	std::cout << "Done\n";
+}
+
+void ENVIRONMENT::Write_Sensor_Data_Single(int evalPeriod) {
+
+    std::cout << "single-start for " << evalPeriod << std::endl;
+	for (int i=0;i<numberOfBodies;i++)
+		objects[i]->Write_To_Python_Single(evalPeriod);
+    for (int j=0;j<numberOfJoints;j++)
+    	joints[j]->Write_To_Python_Single(evalPeriod);
+
+	std::cout << "single-done\n";
 }
 
 // ----------------------- Private methods ---------------------------
