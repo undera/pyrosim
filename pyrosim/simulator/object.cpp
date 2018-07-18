@@ -282,30 +282,22 @@ void OBJECT::Write_To_Python(int evalPeriod) {
 }
 
 void OBJECT::Write_To_Python_Single(int evalPeriod) {
-    std::cerr << "writing sensors in body " << this->Get_ID() << " to python " << std::endl;
 	if ( raySensor ){
-        std::cerr << "  writing ray sensor to python "  << std::endl;
 		raySensor->Write_To_Python_Single(evalPeriod);
     }
 
 	if ( lightSensor ){
 		lightSensor->Write_To_Python_Single(evalPeriod);
-        std::cerr << "  writing light sensor to python "  << std::endl;
     }
 	if ( positionSensor ){
-        std::cerr << "  writing position sensor to python "  << std::endl;
-		positionSensor->Write_To_Python_Single(evalPeriod);
     }
 	if ( touchSensor ){
-        std::cerr << "  writing touch sensor to python "  << std::endl;
-		touchSensor->Write_To_Python_Single(evalPeriod);
+    	touchSensor->Write_To_Python_Single(evalPeriod);
     }
     if ( vestibularSensor ){
-        std::cerr << "  writing vestib sensor to python "  << std::endl;
         vestibularSensor->Write_To_Python_Single(evalPeriod);
     }
     if ( isSeenSensor ){
-        std::cerr << "  writing is seen sensor to python "  << std::endl;
         isSeenSensor->Write_To_Python_Single(evalPeriod);
     }
 }

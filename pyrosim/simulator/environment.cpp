@@ -234,7 +234,6 @@ void ENVIRONMENT::Update_Forces(int timeStep){
 void ENVIRONMENT::Write_Sensor_Data(int evalPeriod) {
 
     std::cerr << "finishing" << std::endl;
-	std::cout << "Writing final sensor data\n";
 	for (int i=0;i<numberOfBodies;i++)
 		objects[i]->Write_To_Python(evalPeriod);
     for (int j=0;j<numberOfJoints;j++)
@@ -250,7 +249,7 @@ void ENVIRONMENT::Write_Sensor_Data_Single(int evalPeriod) {
 		objects[i]->Write_To_Python_Single(evalPeriod);
     for (int j=0;j<numberOfJoints;j++)
     	joints[j]->Write_To_Python_Single(evalPeriod);
-
+		std::cout.flush();
 	std::cout << "single-done\n";
 }
 
